@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmospheric Pressure and Density Calculator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id= "balloon">
+    <img src = "balloon5.png" width = "13%" height = "13%" alt= "Hot air balloon picture"/>
+    <!--Source: https://www.hiclipart.com/free-transparent-background-png-clipart-pqvqh -->
+    </div>
+    <div class= "labels">
+        <H1>Atmospheric Pressure</H1>
+        <H1>&</H1>
+        <H1>Density Calculator</H1>
+    </div>
+    <div class = "calculator">
+    <form>
+        <table>
+            <label>
+            <tr>
+                <td>
+                    <div id = "temp" class= "input">
+                    Temperature
+                    </div>
+                </td>
+                <td>
+                    <input onmouseover="inputBlock()" id = "temptxt" class = "txt" type="number" placeholder= "Temperature" required>
+                </td>
+                <td>
+                    
+                    <select id="tempchoices" class= "choices">
+                        <option>°C</option>
+                        <option>°F</option>
+                        <option>K</option>
+                    </select>
+                    
+                </td>
+                <td>
+                    <select id= "atmoslayer">
+                        <option>Upper Stratosphere</option>
+                        <option>Troposphere</option>
+                    </select>
+                </td>
+            </tr>
+            </label>
+            <label>
+            <tr>
+                <td>
+                    <div id = "alti" class = "input">
+                    Altitude
+                    </div>
+                </td>
+                <td>
+                    <input onmouseover="inputBlock()" id = "alttxt" class = "txt" type="number" placeholder= "Height" required>
+                </td>
+                <td>
+                    
+                    <select id="altichoices" class= "choices">
+                        <option>m</option>
+                        <option>ft.</option>
+                    </select>
+                    
+                </td>
+            </tr>
+            </label>
+           
+        </table>
+        
+        <button class ="solve" type= "button" onclick="convertUnits();pressureCalculate();properDisplay();densityCalculate()">Calculate</button>
+        <button class = "reset" type= "button" onclick= "resetData()" >Reset</button>
+
+        <table class= "test">
+            <tr>
+                <td> 
+                    <div id = "press" class = "output">   
+                    Pressure
+                    </div>
+                </td>
+                <td>
+                    <input id = "presstxt" class = "txt" readonly type= "number" placeholder= "Pressure">
+                </td>
+                <td>
+                    
+                    <select id="presschoices" class= "choices">
+                        
+                        <option>kPa</option>
+                        <option>mm Hg</option>
+                        <option>atm</option>
+                        <option>psi</option>
+                        
+                    </select>
+                </td>
+            </tr>
+               
+            <tr>
+                <td>
+                    <div id = "dens" class = "output"> 
+                    Density
+                    </div>
+                </td>
+                <td>
+                    <input id = "denstxt" class = "txt" readonly type= "number" placeholder= "Density">
+                </td>
+                
+                <td>
+                   
+                    <select id="denschoices" class= "choices">
+                        
+                        <option>kg/m³</option>
+                        <option>kg/L</option>
+                        <option>t/m³</option>
+                       
+                    </select>    
+                </td>
+            </tr>
+        </table>
+       
+    </form>    
+    </div>
+    <div id= "notes">
+        <p>Source:
+            
+        <a href="https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html#" target= "_blank" style= text-decoration:none;>Nasa Atmospheric Earth Model</a>
+            
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
